@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D7A8B8F717E487FD00F516E9 /* SMVerticalSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7A8B8F617E487FD00F516E9 /* SMVerticalSegmentedControl.m */; };
 		D7BED0AA17E3C6F90045F8C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0A917E3C6F90045F8C4 /* Foundation.framework */; };
 		D7BED0AC17E3C6F90045F8C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0AB17E3C6F90045F8C4 /* CoreGraphics.framework */; };
 		D7BED0AE17E3C6F90045F8C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0AD17E3C6F90045F8C4 /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		D7BED0D317E3C6FA0045F8C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0D117E3C6FA0045F8C4 /* InfoPlist.strings */; };
 		D7BED0D517E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0D417E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m */; };
 		D7BED0DF17E3C73D0045F8C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0DE17E3C73D0045F8C4 /* Main.storyboard */; };
-		D7BED0E317E3C7A10045F8C4 /* SMVerticalSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D7A8B8F517E487FD00F516E9 /* SMVerticalSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMVerticalSegmentedControl.h; path = SMVerticalSegmentedControl/SMVerticalSegmentedControl.h; sourceTree = "<group>"; };
+		D7A8B8F617E487FD00F516E9 /* SMVerticalSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SMVerticalSegmentedControl.m; path = SMVerticalSegmentedControl/SMVerticalSegmentedControl.m; sourceTree = "<group>"; };
 		D7BED0A617E3C6F90045F8C4 /* SMVerticalSegmentedControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMVerticalSegmentedControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7BED0A917E3C6F90045F8C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D7BED0AB17E3C6F90045F8C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +56,6 @@
 		D7BED0D217E3C6FA0045F8C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D7BED0D417E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMVerticalSegmentedControlExampleTests.m; sourceTree = "<group>"; };
 		D7BED0DE17E3C73D0045F8C4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		D7BED0E117E3C7A10045F8C4 /* SMVerticalSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVerticalSegmentedControl.h; sourceTree = "<group>"; };
-		D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMVerticalSegmentedControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +159,8 @@
 		D7BED0E017E3C7A10045F8C4 /* SMVerticalSegmentedControl */ = {
 			isa = PBXGroup;
 			children = (
-				D7BED0E117E3C7A10045F8C4 /* SMVerticalSegmentedControl.h */,
-				D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */,
+				D7A8B8F517E487FD00F516E9 /* SMVerticalSegmentedControl.h */,
+				D7A8B8F617E487FD00F516E9 /* SMVerticalSegmentedControl.m */,
 			);
 			name = SMVerticalSegmentedControl;
 			path = ../../../SMVerticalSegmentedControl;
@@ -265,7 +265,7 @@
 			files = (
 				D7BED0C017E3C6F90045F8C4 /* ViewController.m in Sources */,
 				D7BED0BA17E3C6F90045F8C4 /* AppDelegate.m in Sources */,
-				D7BED0E317E3C7A10045F8C4 /* SMVerticalSegmentedControl.m in Sources */,
+				D7A8B8F717E487FD00F516E9 /* SMVerticalSegmentedControl.m in Sources */,
 				D7BED0B617E3C6F90045F8C4 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -467,6 +467,7 @@
 				D7BED0DA17E3C6FA0045F8C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7BED0DB17E3C6FA0045F8C4 /* Build configuration list for PBXNativeTarget "SMVerticalSegmentedControlExampleTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +476,7 @@
 				D7BED0DD17E3C6FA0045F8C4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

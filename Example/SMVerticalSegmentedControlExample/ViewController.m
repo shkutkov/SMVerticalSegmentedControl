@@ -71,7 +71,7 @@ static const int kSegmentedControlWidth = 85;
     };
 }
 
-- (void)createExample:(int)exampleNumber inView:(UIView *)view
+- (void)createExample:(NSUInteger)exampleNumber inView:(UIView *)view
 {
     NSArray *titles = @[@"item 1", @"item 2", @"item 3", @"item 4", @"item 5"];
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(2, 20, CGRectGetWidth(view.frame) - 4, 80)];
