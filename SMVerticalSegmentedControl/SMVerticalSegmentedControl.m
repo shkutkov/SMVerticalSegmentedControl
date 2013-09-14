@@ -6,6 +6,7 @@
 //
 
 #import "SMVerticalSegmentedControl.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define IS_IOS_LESS_THAN(v) ([[[UIDevice currentDevice] systemVersion] compare:v options:NSNumericSearch] == NSOrderedAscending)
 
