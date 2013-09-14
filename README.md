@@ -3,6 +3,9 @@ SMVerticalSegmentedControl
 
 SMVerticalSegmentedControl is plain vertical segmented control (like UISegmentedControl). Component inspired by [HMSegementedControl](https://github.com/HeshamMegid/HMSegmentedControl)
 
+### Screenshots
+
+![](https://raw.github.com/shkutkov/SMVerticalSegmentedControl/master/Screenshots/1.png)   ![](https://raw.github.com/shkutkov/SMVerticalSegmentedControl/master/Screenshots/2.png)
 
 ### UIAppearance support
 
