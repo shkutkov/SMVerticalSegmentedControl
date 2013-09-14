@@ -41,7 +41,7 @@ SMVerticalSegmentedControl uses ARC.
 
 ---
 
-Add manually 2 files `SMVerticalSegmentedControl.h`, `SMVerticalSegmentedControl.m` to your project.
+Add `pod 'SMVerticalSegmentedControl', '~> 0.1.1'` to your Podfile  or add manually 2 files `SMVerticalSegmentedControl.h`, `SMVerticalSegmentedControl.m` to your project.
 
 ### Examples
 
