@@ -13,7 +13,7 @@
 #define DEFAULT_TEXT_FONT                   [UIFont systemFontOfSize:14.0f]
 #define DEFAULT_TEXT_COLOR                  [UIColor blackColor]
 #define DEFAULT_SELECTION_INDICATOR_COLOR   [UIColor colorWithRed:52.0f/255.0f green:181.0f/255.0f blue:229.0f/255.0f alpha:1.0f]
-#define DEFAULT_SEGMENT_EDGE_INSET          UIEdgeInsetsMake(5, 5, 4, 5);
+#define DEFAULT_SEGMENT_EDGE_INSET          UIEdgeInsetsMake(5, 5, 5, 5);
 #define DEFAULT_BOX_BACKGROUND_COLOR_ALPHA  0.2f;
 #define DEFAULT_BOX_BORDER_COLOR_ALPHA      0.3f
 #define DEFAULT_BOX_BORDER_WIDTH            1.0f;
