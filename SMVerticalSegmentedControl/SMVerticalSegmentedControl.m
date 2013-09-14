@@ -107,7 +107,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     self.layer.sublayers = nil;
     
     [self.sectionTitles enumerateObjectsUsingBlock:^(id titleString, NSUInteger idx, BOOL *stop) {
-        CGFloat stringHeight = roundf([titleString sizeWithFont:self.textFont].height);
+        CGFloat stringHeight = roundf([self getTextHeight:titleString]);
         CGFloat y = self.segmentHeight * idx + self.segmentHeight / 2 - stringHeight / 2;
         
         /* 
@@ -166,6 +166,16 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 }
 
 #pragma mark Private Methods
+
+- (CGFloat)getTextHeight:(NSString *)text
+{
+#ifdef __IPHONE_7_0
+    return [text sizeWithAttributes: @{NSFontAttributeName: self.textFont}].height;
+#else
+    return [text sizeWithFont:self.textFont].height;
+#endif
+}
+
 - (CGRect)frameForSelectionIndicator
 {
     CGFloat indicatorXOffset = 0;
@@ -176,7 +186,8 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     
     CGFloat sectionHeight = 0.0f;
     
-    CGFloat stringHeight = [[self.sectionTitles objectAtIndex:self.selectedSegmentIndex] sizeWithFont:self.textFont].height;
+    NSString *title = self.sectionTitles[self.selectedSegmentIndex];
+    CGFloat stringHeight = [self getTextHeight:title];
     sectionHeight = stringHeight;
     
     if (self.selectionStyle == SMVerticalSegmentedControlSelectionStyleTextHeightStrip && sectionHeight <= self.segmentHeight) {
@@ -201,7 +212,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         self.segmentHeight = 0;
         
         for (NSString *titleString in self.sectionTitles) {
-            CGFloat stringHeight = [titleString sizeWithFont:self.textFont].height + self.segmentEdgeInset.top + self.segmentEdgeInset.bottom;
+            CGFloat stringHeight = [self getTextHeight:titleString] + self.segmentEdgeInset.top + self.segmentEdgeInset.bottom;
             self.segmentHeight = MAX(stringHeight, self.segmentHeight);
         }
         self.frame = CGRectMake(0, 0, self.width, self.segmentHeight * self.sectionTitles.count);
