@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D7BED0AA17E3C6F90045F8C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0A917E3C6F90045F8C4 /* Foundation.framework */; };
+		D7BED0AC17E3C6F90045F8C4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0AB17E3C6F90045F8C4 /* CoreGraphics.framework */; };
+		D7BED0AE17E3C6F90045F8C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0AD17E3C6F90045F8C4 /* UIKit.framework */; };
+		D7BED0B417E3C6F90045F8C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0B217E3C6F90045F8C4 /* InfoPlist.strings */; };
+		D7BED0B617E3C6F90045F8C4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0B517E3C6F90045F8C4 /* main.m */; };
+		D7BED0BA17E3C6F90045F8C4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0B917E3C6F90045F8C4 /* AppDelegate.m */; };
+		D7BED0C017E3C6F90045F8C4 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0BF17E3C6F90045F8C4 /* ViewController.m */; };
+		D7BED0C217E3C6F90045F8C4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0C117E3C6F90045F8C4 /* Images.xcassets */; };
+		D7BED0C917E3C6FA0045F8C4 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0C817E3C6FA0045F8C4 /* XCTest.framework */; };
+		D7BED0CA17E3C6FA0045F8C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0A917E3C6F90045F8C4 /* Foundation.framework */; };
+		D7BED0CB17E3C6FA0045F8C4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BED0AD17E3C6F90045F8C4 /* UIKit.framework */; };
+		D7BED0D317E3C6FA0045F8C4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0D117E3C6FA0045F8C4 /* InfoPlist.strings */; };
+		D7BED0D517E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0D417E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m */; };
+		D7BED0DF17E3C73D0045F8C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7BED0DE17E3C73D0045F8C4 /* Main.storyboard */; };
+		D7BED0E317E3C7A10045F8C4 /* SMVerticalSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D7BED0CC17E3C6FA0045F8C4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7BED09E17E3C6F90045F8C4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7BED0A517E3C6F90045F8C4;
+			remoteInfo = SMVerticalSegmentedControlExample;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D7BED0A617E3C6F90045F8C4 /* SMVerticalSegmentedControlExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SMVerticalSegmentedControlExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BED0A917E3C6F90045F8C4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D7BED0AB17E3C6F90045F8C4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D7BED0AD17E3C6F90045F8C4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D7BED0B117E3C6F90045F8C4 /* SMVerticalSegmentedControlExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMVerticalSegmentedControlExample-Info.plist"; sourceTree = "<group>"; };
+		D7BED0B317E3C6F90045F8C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7BED0B517E3C6F90045F8C4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D7BED0B717E3C6F90045F8C4 /* SMVerticalSegmentedControlExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMVerticalSegmentedControlExample-Prefix.pch"; sourceTree = "<group>"; };
+		D7BED0B817E3C6F90045F8C4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D7BED0B917E3C6F90045F8C4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D7BED0BE17E3C6F90045F8C4 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D7BED0BF17E3C6F90045F8C4 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D7BED0C117E3C6F90045F8C4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D7BED0C717E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMVerticalSegmentedControlExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7BED0C817E3C6FA0045F8C4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		D7BED0D017E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SMVerticalSegmentedControlExampleTests-Info.plist"; sourceTree = "<group>"; };
+		D7BED0D217E3C6FA0045F8C4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D7BED0D417E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMVerticalSegmentedControlExampleTests.m; sourceTree = "<group>"; };
+		D7BED0DE17E3C73D0045F8C4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D7BED0E117E3C7A10045F8C4 /* SMVerticalSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMVerticalSegmentedControl.h; sourceTree = "<group>"; };
+		D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMVerticalSegmentedControl.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D7BED0A317E3C6F90045F8C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0AC17E3C6F90045F8C4 /* CoreGraphics.framework in Frameworks */,
+				D7BED0AE17E3C6F90045F8C4 /* UIKit.framework in Frameworks */,
+				D7BED0AA17E3C6F90045F8C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BED0C417E3C6FA0045F8C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0C917E3C6FA0045F8C4 /* XCTest.framework in Frameworks */,
+				D7BED0CB17E3C6FA0045F8C4 /* UIKit.framework in Frameworks */,
+				D7BED0CA17E3C6FA0045F8C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D7BED09D17E3C6F90045F8C4 = {
+			isa = PBXGroup;
+			children = (
+				D7BED0AF17E3C6F90045F8C4 /* SMVerticalSegmentedControlExample */,
+				D7BED0CE17E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests */,
+				D7BED0A817E3C6F90045F8C4 /* Frameworks */,
+				D7BED0A717E3C6F90045F8C4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D7BED0A717E3C6F90045F8C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0A617E3C6F90045F8C4 /* SMVerticalSegmentedControlExample.app */,
+				D7BED0C717E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7BED0A817E3C6F90045F8C4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0A917E3C6F90045F8C4 /* Foundation.framework */,
+				D7BED0AB17E3C6F90045F8C4 /* CoreGraphics.framework */,
+				D7BED0AD17E3C6F90045F8C4 /* UIKit.framework */,
+				D7BED0C817E3C6FA0045F8C4 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7BED0AF17E3C6F90045F8C4 /* SMVerticalSegmentedControlExample */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0E017E3C7A10045F8C4 /* SMVerticalSegmentedControl */,
+				D7BED0DE17E3C73D0045F8C4 /* Main.storyboard */,
+				D7BED0B817E3C6F90045F8C4 /* AppDelegate.h */,
+				D7BED0B917E3C6F90045F8C4 /* AppDelegate.m */,
+				D7BED0BE17E3C6F90045F8C4 /* ViewController.h */,
+				D7BED0BF17E3C6F90045F8C4 /* ViewController.m */,
+				D7BED0C117E3C6F90045F8C4 /* Images.xcassets */,
+				D7BED0B017E3C6F90045F8C4 /* Supporting Files */,
+			);
+			path = SMVerticalSegmentedControlExample;
+			sourceTree = "<group>";
+		};
+		D7BED0B017E3C6F90045F8C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0B117E3C6F90045F8C4 /* SMVerticalSegmentedControlExample-Info.plist */,
+				D7BED0B217E3C6F90045F8C4 /* InfoPlist.strings */,
+				D7BED0B517E3C6F90045F8C4 /* main.m */,
+				D7BED0B717E3C6F90045F8C4 /* SMVerticalSegmentedControlExample-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7BED0CE17E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0D417E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m */,
+				D7BED0CF17E3C6FA0045F8C4 /* Supporting Files */,
+			);
+			path = SMVerticalSegmentedControlExampleTests;
+			sourceTree = "<group>";
+		};
+		D7BED0CF17E3C6FA0045F8C4 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0D017E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests-Info.plist */,
+				D7BED0D117E3C6FA0045F8C4 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7BED0E017E3C7A10045F8C4 /* SMVerticalSegmentedControl */ = {
+			isa = PBXGroup;
+			children = (
+				D7BED0E117E3C7A10045F8C4 /* SMVerticalSegmentedControl.h */,
+				D7BED0E217E3C7A10045F8C4 /* SMVerticalSegmentedControl.m */,
+			);
+			name = SMVerticalSegmentedControl;
+			path = ../../../SMVerticalSegmentedControl;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D7BED0A517E3C6F90045F8C4 /* SMVerticalSegmentedControlExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BED0D817E3C6FA0045F8C4 /* Build configuration list for PBXNativeTarget "SMVerticalSegmentedControlExample" */;
+			buildPhases = (
+				D7BED0A217E3C6F90045F8C4 /* Sources */,
+				D7BED0A317E3C6F90045F8C4 /* Frameworks */,
+				D7BED0A417E3C6F90045F8C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMVerticalSegmentedControlExample;
+			productName = SMVerticalSegmentedControlExample;
+			productReference = D7BED0A617E3C6F90045F8C4 /* SMVerticalSegmentedControlExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7BED0C617E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7BED0DB17E3C6FA0045F8C4 /* Build configuration list for PBXNativeTarget "SMVerticalSegmentedControlExampleTests" */;
+			buildPhases = (
+				D7BED0C317E3C6FA0045F8C4 /* Sources */,
+				D7BED0C417E3C6FA0045F8C4 /* Frameworks */,
+				D7BED0C517E3C6FA0045F8C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7BED0CD17E3C6FA0045F8C4 /* PBXTargetDependency */,
+			);
+			name = SMVerticalSegmentedControlExampleTests;
+			productName = SMVerticalSegmentedControlExampleTests;
+			productReference = D7BED0C717E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7BED09E17E3C6F90045F8C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Mikhail Shkutkov";
+				TargetAttributes = {
+					D7BED0C617E3C6FA0045F8C4 = {
+						TestTargetID = D7BED0A517E3C6F90045F8C4;
+					};
+				};
+			};
+			buildConfigurationList = D7BED0A117E3C6F90045F8C4 /* Build configuration list for PBXProject "SMVerticalSegmentedControlExample" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7BED09D17E3C6F90045F8C4;
+			productRefGroup = D7BED0A717E3C6F90045F8C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7BED0A517E3C6F90045F8C4 /* SMVerticalSegmentedControlExample */,
+				D7BED0C617E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D7BED0A417E3C6F90045F8C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0DF17E3C73D0045F8C4 /* Main.storyboard in Resources */,
+				D7BED0C217E3C6F90045F8C4 /* Images.xcassets in Resources */,
+				D7BED0B417E3C6F90045F8C4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BED0C517E3C6FA0045F8C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0D317E3C6FA0045F8C4 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D7BED0A217E3C6F90045F8C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0C017E3C6F90045F8C4 /* ViewController.m in Sources */,
+				D7BED0BA17E3C6F90045F8C4 /* AppDelegate.m in Sources */,
+				D7BED0E317E3C7A10045F8C4 /* SMVerticalSegmentedControl.m in Sources */,
+				D7BED0B617E3C6F90045F8C4 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7BED0C317E3C6FA0045F8C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7BED0D517E3C6FA0045F8C4 /* SMVerticalSegmentedControlExampleTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D7BED0CD17E3C6FA0045F8C4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7BED0A517E3C6F90045F8C4 /* SMVerticalSegmentedControlExample */;
+			targetProxy = D7BED0CC17E3C6FA0045F8C4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D7BED0B217E3C6F90045F8C4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7BED0B317E3C6F90045F8C4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D7BED0D117E3C6FA0045F8C4 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7BED0D217E3C6FA0045F8C4 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D7BED0D617E3C6FA0045F8C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D7BED0D717E3C6FA0045F8C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7BED0D917E3C6FA0045F8C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Prefix.pch";
+				INFOPLIST_FILE = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D7BED0DA17E3C6FA0045F8C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Prefix.pch";
+				INFOPLIST_FILE = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		D7BED0DC17E3C6FA0045F8C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMVerticalSegmentedControlExample.app/SMVerticalSegmentedControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SMVerticalSegmentedControlExampleTests/SMVerticalSegmentedControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		D7BED0DD17E3C6FA0045F8C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SMVerticalSegmentedControlExample.app/SMVerticalSegmentedControlExample";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample-Prefix.pch";
+				INFOPLIST_FILE = "SMVerticalSegmentedControlExampleTests/SMVerticalSegmentedControlExampleTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D7BED0A117E3C6F90045F8C4 /* Build configuration list for PBXProject "SMVerticalSegmentedControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BED0D617E3C6FA0045F8C4 /* Debug */,
+				D7BED0D717E3C6FA0045F8C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7BED0D817E3C6FA0045F8C4 /* Build configuration list for PBXNativeTarget "SMVerticalSegmentedControlExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BED0D917E3C6FA0045F8C4 /* Debug */,
+				D7BED0DA17E3C6FA0045F8C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D7BED0DB17E3C6FA0045F8C4 /* Build configuration list for PBXNativeTarget "SMVerticalSegmentedControlExampleTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7BED0DC17E3C6FA0045F8C4 /* Debug */,
+				D7BED0DD17E3C6FA0045F8C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7BED09E17E3C6F90045F8C4 /* Project object */;
+}

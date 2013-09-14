@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>95283B5D-68DE-4072-B1F3-6E06EA9EEDE8</string>
+	<key>IDESourceControlProjectName</key>
+	<string>SMVerticalSegmentedControlExample</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>4F5021D3-30DC-458D-9FAA-933821E27D0A</key>
+		<string>https://github.com/shkutkov/SMVerticalSegmentedControl.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Example/SMVerticalSegmentedControlExample/SMVerticalSegmentedControlExample.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>4F5021D3-30DC-458D-9FAA-933821E27D0A</key>
+		<string>../../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/shkutkov/SMVerticalSegmentedControl.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>4F5021D3-30DC-458D-9FAA-933821E27D0A</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4F5021D3-30DC-458D-9FAA-933821E27D0A</string>
+			<key>IDESourceControlWCCName</key>
+			<string>SMVerticalSegmentedControl</string>
+		</dict>
+	</array>
+</dict>
+</plist>
