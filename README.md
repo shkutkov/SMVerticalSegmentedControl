@@ -50,8 +50,8 @@ Add manually 2 files `SMVerticalSegmentedControl.h`, `SMVerticalSegmentedControl
 ##### Simple
 ```objective-c
 NSArray *titles = @[@"Title 1", @"Title 2", @"Title 3", @"Title 4"];
-self.segmentedControl = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:titles];
-[self.view addSubview:self.segmentedControl];
+SMVerticalSegmentedControl *segmentedControl = [[SMVerticalSegmentedControl alloc] initWithSectionTitles:titles];
+[self.view addSubview:segmentedControl];
 ```
 
 ##### Advanced
@@ -67,9 +67,10 @@ segmentedControl.selectionIndicatorThickness = 0;
 segmentedControl.selectionBoxBorderWidth = 2;
 segmentedControl.selectionBoxBackgroundColorAlpha = 0.5;
 segmentedControl.selectionBoxBorderColorAlpha = 0.7;
-self.segmentedControl.indexChangeBlock = ^(NSInteger index) {
+segmentedControl.indexChangeBlock = ^(NSInteger index) {
 	//TODO: add handler
 };
+[self.view addSubview:segmentedControl];
 ```
 
 ##### Appearance 
