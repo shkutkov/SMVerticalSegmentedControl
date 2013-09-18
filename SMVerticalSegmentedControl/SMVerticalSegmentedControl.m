@@ -170,11 +170,14 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 
 - (CGFloat)getTextHeight:(NSString *)text
 {
-    #if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+    if ([text respondsToSelector:@selector(sizeWithAttributes:)]) {
         return [text sizeWithAttributes: @{NSFontAttributeName: self.textFont}].height;
-    #else
+    } else {
+#pragma clang diagnostic push
+#pragma GCC diagnostic ignored "-Wdeprecated"
         return [text sizeWithFont:self.textFont].height;
-    #endif
+#pragma clang diagnostic pop
+    }
 }
 
 - (CGRect)frameForSelectionIndicator
