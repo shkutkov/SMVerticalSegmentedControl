@@ -1,27 +1,10 @@
-/*
- Version 0.1.1
- 
- SMVerticalSegmentedControl is available under the MIT license.
- 
- Copyright (c) 2013 Mikhail Shkutkov.
- 
- Permission is hereby granted, free of charge, to any person obtaining a copy
- of this software and associated documentation files (the "Software"), to deal
- in the Software without restriction, including without limitation the rights
- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- copies of the Software, and to permit persons to whom the Software is
- furnished to do so, subject to the following conditions:
- 
- The above copyright notice and this permission notice shall be included
- in all copies or substantial portions of the Software.
- 
- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
- INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
- PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
- HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/
+//
+//  SMVerticalSegmentedControl.m
+//  Version 0.1.2
+//
+//  Created by Mikhail Shkutkov on 9/6/13.
+//  Copyright (c) 2013 Mikhail Shkutkov. All rights reserved.
+//
 
 #import "SMVerticalSegmentedControl.h"
 #import <QuartzCore/QuartzCore.h>
@@ -56,6 +39,8 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 @property (nonatomic, strong) CALayer *selectionIndicatorBoxLayer;
 @property (nonatomic, readwrite) CGFloat segmentHeight;
 
+@property (nonatomic, assign) NSInteger visibleSelectedSegmentIndex;
+
 @end
 
 @implementation SMVerticalSegmentedControl
@@ -66,6 +51,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     if (self = [super initWithFrame:frame]) {
         self.opaque = NO;
         _selectedSegmentIndex = 0;
+        _visibleSelectedSegmentIndex = 0;
         
         _backgroundColor = DEFAULT_BACKGROUND_COLOR;
         
@@ -85,7 +71,6 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         _segmentEdgeInset = DEFAULT_SEGMENT_EDGE_INSET;
         
         _width = kDefaultSegmentWidth;
-        
         
         _selectionIndicatorStripLayer = [CALayer layer];
         
@@ -129,10 +114,10 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         CGFloat stringHeight = roundf([self getTextHeight:titleString]);
         CGFloat y = self.segmentHeight * idx + self.segmentHeight / 2 - stringHeight / 2;
         
-        /* 
-           Workaround for iOS 5.x
-           http://stackoverflow.com/questions/12567562/unwanted-vertical-padding-from-ios-6-on-catextlayer
-        */
+        /*
+         Workaround for iOS 5.x
+         http://stackoverflow.com/questions/12567562/unwanted-vertical-padding-from-ios-6-on-catextlayer
+         */
         if (IS_IOS_LESS_THAN(@"6.0")) {
             y +=(self.textFont.capHeight - self.textFont.xHeight);
         }
@@ -162,7 +147,9 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         
         [titleLayer setString:titleString];
         
-        if (self.selectedSegmentIndex == idx) {
+        // Use visibileSelectedSegmentIndex for highlighting segment text instead of selectedSegmentIndex
+        // This is necessary for proper selection animation
+        if (self.visibleSelectedSegmentIndex == idx) {
             [titleLayer setForegroundColor:self.selectedTextColor.CGColor];
         } else {
             [titleLayer setForegroundColor:self.textColor.CGColor];
@@ -294,7 +281,8 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 - (void)setSelectedSegmentIndex:(NSUInteger)index animated:(BOOL)animated notify:(BOOL)notify
 {
     _selectedSegmentIndex = index;
-    [self setNeedsDisplay];
+    // Reset visible selected index
+    self.visibleSelectedSegmentIndex = kSMVerticalSegmentedControlNoSegment;
     
     if (index == kSMVerticalSegmentedControlNoSegment) {
         [self.selectionIndicatorStripLayer removeFromSuperlayer];
@@ -327,12 +315,20 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
             
             // Animate to new position
             [CATransaction begin];
+            [CATransaction setCompletionBlock:^{
+                // When animation is finished, set proper visibleSelectedSegmentIndex
+                self.visibleSelectedSegmentIndex = index;
+                [self setNeedsDisplay];
+            }];
             [CATransaction setAnimationDuration:kDefaultAnimationDuration];
             [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
             self.selectionIndicatorStripLayer.frame = [self frameForSelectionIndicator];
+            
             self.selectionIndicatorBoxLayer.frame = [self frameForFillerSelectionIndicator];
             [CATransaction commit];
         } else {
+            self.visibleSelectedSegmentIndex = index;
+            
             NSDictionary *newActions = @{kPositionCALayerAction : [NSNull null], kBoundsCALayerAction : [NSNull null]};
             self.selectionIndicatorStripLayer.actions = newActions;
             self.selectionIndicatorStripLayer.frame = [self frameForSelectionIndicator];
@@ -345,6 +341,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
             }
         }
     }
+    [self setNeedsDisplay];
 }
 
 - (void)setFrame:(CGRect)frame
