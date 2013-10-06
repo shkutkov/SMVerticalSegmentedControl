@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SMVerticalSegmentedControl"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "SMVerticalSegmentedControl is plain vertical segmented control"
   s.homepage     = "https://github.com/shkutkov/SMVerticalSegmentedControl"
   s.screenshots  = "https://raw.github.com/shkutkov/SMVerticalSegmentedControl/master/Screenshots/1.png", "https://raw.github.com/shkutkov/SMVerticalSegmentedControl/master/Screenshots/2.png"
