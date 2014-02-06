@@ -97,6 +97,8 @@ segmentedControl.indexChangeBlock = ^(NSInteger index) {
 * [@shkutkov](https://github.com/shkutkov) on Github
 * <a href="mailTo:shkutkov@gmail.com">shkutkov@gmail.com</a>
 
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/shkutkov/smverticalsegmentedcontrol/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
 ### License
 
 ---
