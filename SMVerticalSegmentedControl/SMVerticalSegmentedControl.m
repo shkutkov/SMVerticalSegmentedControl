@@ -26,9 +26,6 @@ static NSString * const kBoundsCALayerAction   = @"bounds";
 
 static CFTimeInterval const kDefaultAnimationDuration    = 0.15f;
 static CGFloat const kDefaultSelectionIndicatorThickness = 2.0f;
-static CGFloat const kDefaultBoxBackgroundColorAlpha     = 0.2f;
-static CGFloat const kDefaultBoxBorderColorAlpha         = 0.3f;
-static CGFloat const kDefaultBoxBorderWidth              = 1.0f;
 static CGFloat const kDefaultSegmentWidth                = 100.0f;
 
 int const kSMVerticalSegmentedControlNoSegment           = -1;
