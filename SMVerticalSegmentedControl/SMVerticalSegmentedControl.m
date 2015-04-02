@@ -1,6 +1,6 @@
 //
 //  SMVerticalSegmentedControl.m
-//  Version 0.1.2
+//  Version 0.1.3
 //
 //  Created by Mikhail Shkutkov on 9/6/13.
 //  Copyright (c) 2013 Mikhail Shkutkov. All rights reserved.
