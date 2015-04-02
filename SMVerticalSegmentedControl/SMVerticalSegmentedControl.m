@@ -98,10 +98,10 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     UIRectFill([self bounds]);
 
     self.selectionIndicatorStripLayer.backgroundColor = self.selectionIndicatorColor.CGColor;
-    self.selectionIndicatorBoxLayer.backgroundColor = [self createColorFromOtherColor:self.selectionIndicatorColor
-                                                                            withAlpha:self.selectionBoxBackgroundColorAlpha].CGColor;
-    self.selectionIndicatorBoxLayer.borderColor = [self createColorFromOtherColor:self.selectionIndicatorColor
-                                                                        withAlpha:self.selectionBoxBorderColorAlpha].CGColor;
+
+    UIColor *selectionIndicatorColorWithSpecifierAlpha = [self.selectionIndicatorColor colorWithAlphaComponent:self.selectionBoxBackgroundColorAlpha];
+    self.selectionIndicatorBoxLayer.backgroundColor = selectionIndicatorColorWithSpecifierAlpha.CGColor;
+    self.selectionIndicatorBoxLayer.borderColor = selectionIndicatorColorWithSpecifierAlpha.CGColor;
     self.selectionIndicatorBoxLayer.borderWidth = self.selectionBoxBorderWidth;
 
     // Remove all sublayers to avoid drawing images over existing ones
@@ -226,12 +226,6 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         self.segmentHeight = size.height / self.sectionTitles.count;
         self.width = size.width;
     }
-}
-
-- (UIColor *)createColorFromOtherColor:(UIColor *)color withAlpha:(CGFloat)alpha
-{
-    const CGFloat* components = CGColorGetComponents(color.CGColor);
-    return [UIColor colorWithRed:components[0] green:components[1] blue:components[2] alpha:alpha];
 }
 
 - (void)notifyForSegmentChangeToIndex:(NSInteger)index
