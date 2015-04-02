@@ -49,34 +49,34 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         self.opaque = NO;
         _selectedSegmentIndex = 0;
         _visibleSelectedSegmentIndex = 0;
-        
+
         _backgroundColor = DEFAULT_BACKGROUND_COLOR;
-        
+
         _textFont = DEFAULT_TEXT_FONT;
         _textColor = DEFAULT_TEXT_COLOR;
-        
+
         _selectedTextColor = _textColor;
-        
+
         _textAlignment = SMVerticalSegmentedControlTextAlignmentLeft;
-        
+
         _selectionIndicatorColor = DEFAULT_SELECTION_INDICATOR_COLOR;
         _selectionIndicatorThickness = kDefaultSelectionIndicatorThickness;
-        
+
         _selectionStyle = SMVerticalSegmentedControlSelectionStyleTextHeightStrip;
         _selectionLocation = SMVerticalSegmentedControlSelectionLocationLeft;
-        
+
         _segmentEdgeInset = DEFAULT_SEGMENT_EDGE_INSET;
-        
+
         _width = kDefaultSegmentWidth;
-        
+
         _selectionIndicatorStripLayer = [CALayer layer];
-        
+
         _selectionIndicatorBoxLayer = [CALayer layer];
         _selectionBoxBackgroundColorAlpha = DEFAULT_BOX_BACKGROUND_COLOR_ALPHA;
         _selectionBoxBorderColorAlpha = DEFAULT_BOX_BORDER_COLOR_ALPHA;
         _selectionBoxBorderWidth = DEFAULT_BOX_BORDER_WIDTH;
     }
-    
+
     return self;
 }
 
@@ -86,7 +86,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         _sectionTitles = sectionTitles;
         [self updateSegmentsRects:CGSizeZero];
     }
-    
+
     return self;
 }
 
@@ -96,21 +96,21 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 {
     [self.backgroundColor setFill];
     UIRectFill([self bounds]);
-    
+
     self.selectionIndicatorStripLayer.backgroundColor = self.selectionIndicatorColor.CGColor;
     self.selectionIndicatorBoxLayer.backgroundColor = [self createColorFromOtherColor:self.selectionIndicatorColor
                                                                             withAlpha:self.selectionBoxBackgroundColorAlpha].CGColor;
     self.selectionIndicatorBoxLayer.borderColor = [self createColorFromOtherColor:self.selectionIndicatorColor
                                                                         withAlpha:self.selectionBoxBorderColorAlpha].CGColor;
     self.selectionIndicatorBoxLayer.borderWidth = self.selectionBoxBorderWidth;
-    
+
     // Remove all sublayers to avoid drawing images over existing ones
     self.layer.sublayers = nil;
-    
+
     [self.sectionTitles enumerateObjectsUsingBlock:^(id titleString, NSUInteger idx, BOOL *stop) {
-        CGFloat stringHeight = roundf([self getTextHeight:titleString]);
+        CGFloat stringHeight = [self getTextHeight:titleString];
         CGFloat y = self.segmentHeight * idx + self.segmentHeight / 2 - stringHeight / 2;
-        
+
         /*
          Workaround for iOS 5.x
          http://stackoverflow.com/questions/12567562/unwanted-vertical-padding-from-ios-6-on-catextlayer
@@ -118,18 +118,18 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         if (IS_IOS_LESS_THAN(@"6.0")) {
             y +=(self.textFont.capHeight - self.textFont.xHeight);
         }
-        
+
         CGRect rect = CGRectMake(self.selectionIndicatorThickness + self.segmentEdgeInset.left,
                                  y,
                                  self.width - self.selectionIndicatorThickness - self.segmentEdgeInset.left - self.segmentEdgeInset.right,
                                  stringHeight);
-        
+
         CATextLayer *titleLayer = [CATextLayer layer];
         // Note: text inside the CATextLayer will appear blurry unless the rect values around rounded
         titleLayer.frame = rect;
         [titleLayer setFont:(__bridge CFTypeRef)(self.textFont.fontName)];
         [titleLayer setFontSize:self.textFont.pointSize];
-        
+
         switch(self.textAlignment) {
             case SMVerticalSegmentedControlTextAlignmentLeft:
                 [titleLayer setAlignmentMode:kCAAlignmentLeft];
@@ -141,9 +141,9 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
                 [titleLayer setAlignmentMode:kCAAlignmentRight];
                 break;
         }
-        
+
         [titleLayer setString:titleString];
-        
+
         // Use visibileSelectedSegmentIndex for highlighting segment text instead of selectedSegmentIndex
         // This is necessary for proper selection animation
         if (self.visibleSelectedSegmentIndex == idx) {
@@ -151,16 +151,16 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         } else {
             [titleLayer setForegroundColor:self.textColor.CGColor];
         }
-        
+
         [titleLayer setContentsScale:[[UIScreen mainScreen] scale]];
         [self.layer addSublayer:titleLayer];
     }];
-    
+
     // Add the selection indicators
     if (self.selectedSegmentIndex != kSMVerticalSegmentedControlNoSegment && !self.selectionIndicatorStripLayer.superlayer) {
         self.selectionIndicatorStripLayer.frame = [self frameForSelectionIndicator];
         [self.layer addSublayer:self.selectionIndicatorStripLayer];
-        
+
         if (self.selectionStyle == SMVerticalSegmentedControlSelectionStyleBox && !self.selectionIndicatorBoxLayer.superlayer) {
             self.selectionIndicatorBoxLayer.frame = [self frameForFillerSelectionIndicator];
             [self.layer insertSublayer:self.selectionIndicatorBoxLayer atIndex:0];
@@ -185,20 +185,20 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 - (CGRect)frameForSelectionIndicator
 {
     CGFloat indicatorXOffset = 0;
-    
+
     if (self.selectionLocation == SMVerticalSegmentedControlSelectionLocationRight) {
         indicatorXOffset = self.bounds.size.width - self.selectionIndicatorThickness;
     }
-    
+
     CGFloat sectionHeight = 0.0f;
-    
+
     NSString *title = self.sectionTitles[self.selectedSegmentIndex];
     CGFloat stringHeight = [self getTextHeight:title];
     sectionHeight = stringHeight;
-    
+
     if (self.selectionStyle == SMVerticalSegmentedControlSelectionStyleTextHeightStrip && sectionHeight <= self.segmentHeight) {
         CGFloat heightToStartOfSelectedIndex = (self.segmentHeight * self.selectedSegmentIndex);
-        
+
         CGFloat y = heightToStartOfSelectedIndex + self.segmentHeight / 2 - (sectionHeight / 2);
         return CGRectMake(indicatorXOffset, y, self.selectionIndicatorThickness, sectionHeight);
     } else {
@@ -216,7 +216,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     // If there's no frame set, calculate the width of the control based on the number of segments and their size
     if (CGRectIsEmpty(self.frame)) {
         self.segmentHeight = 0;
-        
+
         for (NSString *titleString in self.sectionTitles) {
             CGFloat stringHeight = [self getTextHeight:titleString] + self.segmentEdgeInset.top + self.segmentEdgeInset.bottom;
             self.segmentHeight = MAX(stringHeight, self.segmentHeight);
@@ -224,8 +224,6 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         self.frame = CGRectMake(0, 0, self.width, self.segmentHeight * self.sectionTitles.count);
     } else {
         self.segmentHeight = size.height / self.sectionTitles.count;
-        
-        self.segmentHeight = roundf(self.segmentHeight);
         self.width = size.width;
     }
 }
@@ -241,7 +239,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     if (self.superview) {
         [self sendActionsForControlEvents:UIControlEventValueChanged];
     }
-    
+
     if (self.indexChangeBlock) {
         self.indexChangeBlock(index);
     }
@@ -253,10 +251,10 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 {
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:self];
-    
+
     if (CGRectContainsPoint(self.bounds, touchLocation)) {
         NSInteger segment = touchLocation.y / self.segmentHeight;
-        
+
         if (segment != self.selectedSegmentIndex) {
             [self setSelectedSegmentIndex:segment animated:YES notify:YES];
         }
@@ -280,13 +278,13 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     _selectedSegmentIndex = index;
     // Reset visible selected index
     self.visibleSelectedSegmentIndex = kSMVerticalSegmentedControlNoSegment;
-    
+
     if (index == kSMVerticalSegmentedControlNoSegment) {
         [self.selectionIndicatorStripLayer removeFromSuperlayer];
         [self.selectionIndicatorBoxLayer removeFromSuperlayer];
     } else {
         if (animated) {
-            
+
             /*
              If the selected segment layer is not added to the super layer, that means no
              index is currently selected, so add the layer then move it to the new
@@ -294,22 +292,22 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
              */
             if (![self.selectionIndicatorStripLayer superlayer]) {
                 [self.layer addSublayer:self.selectionIndicatorStripLayer];
-                
+
                 if (self.selectionStyle == SMVerticalSegmentedControlSelectionStyleBox && ![self.selectionIndicatorBoxLayer superlayer])
                     [self.layer insertSublayer:self.selectionIndicatorBoxLayer atIndex:0];
-                
+
                 [self setSelectedSegmentIndex:index animated:NO notify:YES];
                 return;
             }
-            
+
             if (notify) {
                 [self notifyForSegmentChangeToIndex:index];
             }
-            
+
             // Restore CALayer animations
             self.selectionIndicatorStripLayer.actions = nil;
             self.selectionIndicatorBoxLayer.actions = nil;
-            
+
             // Animate to new position
             [CATransaction begin];
             [CATransaction setCompletionBlock:^{
@@ -320,19 +318,19 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
             [CATransaction setAnimationDuration:kDefaultAnimationDuration];
             [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear]];
             self.selectionIndicatorStripLayer.frame = [self frameForSelectionIndicator];
-            
+
             self.selectionIndicatorBoxLayer.frame = [self frameForFillerSelectionIndicator];
             [CATransaction commit];
         } else {
             self.visibleSelectedSegmentIndex = index;
-            
+
             NSDictionary *newActions = @{kPositionCALayerAction : [NSNull null], kBoundsCALayerAction : [NSNull null]};
             self.selectionIndicatorStripLayer.actions = newActions;
             self.selectionIndicatorStripLayer.frame = [self frameForSelectionIndicator];
-            
+
             self.selectionIndicatorBoxLayer.actions = newActions;
             self.selectionIndicatorBoxLayer.frame = [self frameForFillerSelectionIndicator];
-            
+
             if (notify) {
                 [self notifyForSegmentChangeToIndex:index];
             }
@@ -344,22 +342,22 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 - (void)setFrame:(CGRect)frame
 {
     [super setFrame:frame];
-    
+
     if (self.sectionTitles) {
         [self updateSegmentsRects:frame.size];
     }
-    
+
     [self setNeedsDisplay];
 }
 
 - (void)setBounds:(CGRect)bounds
 {
     [super setBounds:bounds];
-    
+
     if (self.sectionTitles) {
         [self updateSegmentsRects:bounds.size];
     }
-    
+
     [self setNeedsDisplay];
 }
 
@@ -369,7 +367,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     if (!newSuperview) {
         return;
     }
-    
+
     [self updateSegmentsRects:self.frame.size];
 }
 
