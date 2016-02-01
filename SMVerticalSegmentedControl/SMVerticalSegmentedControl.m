@@ -46,37 +46,8 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 - (id)initWithFrame:(CGRect)frame
 {
     if (self = [super initWithFrame:frame]) {
-        self.opaque = NO;
-        _selectedSegmentIndex = 0;
-        _visibleSelectedSegmentIndex = 0;
-
-        _backgroundColor = DEFAULT_BACKGROUND_COLOR;
-
-        _textFont = DEFAULT_TEXT_FONT;
-        _textColor = DEFAULT_TEXT_COLOR;
-
-        _selectedTextColor = _textColor;
-
-        _textAlignment = SMVerticalSegmentedControlTextAlignmentLeft;
-
-        _selectionIndicatorColor = DEFAULT_SELECTION_INDICATOR_COLOR;
-        _selectionIndicatorThickness = kDefaultSelectionIndicatorThickness;
-
-        _selectionStyle = SMVerticalSegmentedControlSelectionStyleTextHeightStrip;
-        _selectionLocation = SMVerticalSegmentedControlSelectionLocationLeft;
-
-        _segmentEdgeInset = DEFAULT_SEGMENT_EDGE_INSET;
-
-        _width = kDefaultSegmentWidth;
-
-        _selectionIndicatorStripLayer = [CALayer layer];
-
-        _selectionIndicatorBoxLayer = [CALayer layer];
-        _selectionBoxBackgroundColorAlpha = DEFAULT_BOX_BACKGROUND_COLOR_ALPHA;
-        _selectionBoxBorderColorAlpha = DEFAULT_BOX_BORDER_COLOR_ALPHA;
-        _selectionBoxBorderWidth = DEFAULT_BOX_BORDER_WIDTH;
+        [self configDefaultSettings];
     }
-
     return self;
 }
 
@@ -86,8 +57,53 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         _sectionTitles = sectionTitles;
         [self updateSegmentsRects:CGSizeZero];
     }
-
     return self;
+}
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
+    self = [super initWithCoder:aDecoder];
+    if (self) {
+        [self configDefaultSettings];
+        self.frame = CGRectZero;
+    }
+    return self;
+}
+
+- (void)setSectionTitles:(NSArray *)sectionTitles {
+    _sectionTitles = sectionTitles;
+    [self updateSegmentsRects:CGSizeZero];
+}
+
+- (void)configDefaultSettings {
+    self.opaque = NO;
+    _selectedSegmentIndex = 0;
+    _visibleSelectedSegmentIndex = 0;
+    
+    _backgroundColor = DEFAULT_BACKGROUND_COLOR;
+    
+    _textFont = DEFAULT_TEXT_FONT;
+    _textColor = DEFAULT_TEXT_COLOR;
+    
+    _selectedTextColor = _textColor;
+    
+    _textAlignment = SMVerticalSegmentedControlTextAlignmentLeft;
+    
+    _selectionIndicatorColor = DEFAULT_SELECTION_INDICATOR_COLOR;
+    _selectionIndicatorThickness = kDefaultSelectionIndicatorThickness;
+    
+    _selectionStyle = SMVerticalSegmentedControlSelectionStyleTextHeightStrip;
+    _selectionLocation = SMVerticalSegmentedControlSelectionLocationLeft;
+    
+    _segmentEdgeInset = DEFAULT_SEGMENT_EDGE_INSET;
+    
+    _width = kDefaultSegmentWidth;
+    
+    _selectionIndicatorStripLayer = [CALayer layer];
+    
+    _selectionIndicatorBoxLayer = [CALayer layer];
+    _selectionBoxBackgroundColorAlpha = DEFAULT_BOX_BACKGROUND_COLOR_ALPHA;
+    _selectionBoxBorderColorAlpha = DEFAULT_BOX_BORDER_COLOR_ALPHA;
+    _selectionBoxBorderWidth = DEFAULT_BOX_BORDER_WIDTH;
 }
 
 #pragma mark - Drawing
