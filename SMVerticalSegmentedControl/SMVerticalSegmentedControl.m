@@ -124,7 +124,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
     self.layer.sublayers = nil;
 
     [self.sectionTitles enumerateObjectsUsingBlock:^(id titleString, NSUInteger idx, BOOL *stop) {
-        CGFloat stringHeight = [self getTextHeight:titleString];
+        CGFloat stringHeight = [self getTextHeight:NSLocalizedString(titleString, @"")];
         CGFloat y = self.segmentHeight * idx + self.segmentHeight / 2 - stringHeight / 2;
 
         /*
@@ -158,7 +158,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
                 break;
         }
 
-        [titleLayer setString:titleString];
+        [titleLayer setString:NSLocalizedString(titleString, @"")];
 
         // Use visibileSelectedSegmentIndex for highlighting segment text instead of selectedSegmentIndex
         // This is necessary for proper selection animation
@@ -208,7 +208,7 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
 
     CGFloat sectionHeight = 0.0f;
 
-    NSString *title = self.sectionTitles[self.selectedSegmentIndex];
+    NSString *title = NSLocalizedString(self.sectionTitles[self.selectedSegmentIndex], @"");
     CGFloat stringHeight = [self getTextHeight:title];
     sectionHeight = stringHeight;
 
@@ -234,7 +234,8 @@ int const kSMVerticalSegmentedControlNoSegment           = -1;
         self.segmentHeight = 0;
 
         for (NSString *titleString in self.sectionTitles) {
-            CGFloat stringHeight = [self getTextHeight:titleString] + self.segmentEdgeInset.top + self.segmentEdgeInset.bottom;
+            CGFloat stringHeight = [self getTextHeight:NSLocalizedString(titleString, @"")]
+            + self.segmentEdgeInset.top + self.segmentEdgeInset.bottom;
             self.segmentHeight = MAX(stringHeight, self.segmentHeight);
         }
         self.frame = CGRectMake(0, 0, self.width, self.segmentHeight * self.sectionTitles.count);
